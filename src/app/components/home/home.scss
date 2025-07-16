@@ -1,0 +1,137 @@
+/* 🔷 Hero-Bereich (linke Seite) */
+.typing {
+  border-right: 2px solid rgb(10, 10, 10);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 4s steps(40, end) forwards;
+  margin: 1rem 0;
+}
+
+/* 🔸 Animationen */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* 🔲 Wrapper für hero + Bildvergleich */
+.hero-compare-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  gap: 2rem;
+  flex-wrap: wrap; /* Responsive */
+}
+
+/* 📐 Hero-Content: linke Spalte */
+.hero-content {
+  flex: 1 1 45%;
+  text-align: right; /* arabisch rechtsbündig */
+}
+
+/* 🖼️ Bildvergleichsbereich */
+.image-compare-container {
+  flex: 1 1 50%;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Bildvergleich Inhalt */
+.image-compare {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.before-image,
+.after-image {
+  width: 100%;
+  position: absolute;
+  transition: clip-path 0.2s ease;
+  user-select: none;
+  top: 0;
+  left: 0;
+}
+
+.before-image {
+  z-index: 1;
+}
+
+.after-image {
+  z-index: 2;
+  clip-path: inset(0 50% 0 0); /* Start mit 50% sichtbar */
+}
+
+/* 🎚️ Slider */
+.compare-slider {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+/* 🎨 Slider-Thumb mit T-Shirt Symbol */
+.compare-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: url('/assets/images/t-shirtVergleich.png') no-repeat center center;
+  background-size: 60%;
+  margin-top: 30%;
+  box-shadow: 0 0 12px rgba(12, 12, 12, 0.983); // farbiger Cyan-Schein
+  transform: translateY(20px);
+}
+
+/* Firefox Thumb */
+.compare-slider::-moz-range-thumb {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: url('/assets/images/t-shirtVergleich.png') no-repeat center center;
+  background-size: 60%;
+  box-shadow: 0 0 12px rgba(12, 12, 12, 0.983); // farbiger Cyan-Schein
+  margin-bottom: -100px;
+  transform: translateY(350%)
+}
+
+
+/* 🏷️ Beschriftung Bild nachher vorher :Labels "Before" & "After" */
+.label {
+  position: absolute;
+  top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 50px;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.before-label {
+ right: 1rem;
+}
+
+.after-label {
+  left: 1rem;
+}
+

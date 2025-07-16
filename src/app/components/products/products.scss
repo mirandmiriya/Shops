@@ -1,0 +1,137 @@
+.product-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px; /* Begrenzt die Breite des Karussells */
+  margin: 20px auto; /* Zentriert das Karussell */
+}
+
+.product-display {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 350px; /* Maximale Breite der Produktkarte */
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* Begrenzt die Höhe des Bildes */
+    object-fit: contain; /* Stellt sicher, dass das Bild vollständig sichtbar ist */
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 10px 0 8px;
+  }
+
+  p {
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .size-selection {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #555;
+    }
+    .size-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      button {
+        background-color: #f0f0f0;
+        color: #333;
+        border: 1px solid #ccc;
+        padding: 12px 20px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, border-color 0.2s ease;
+
+        &:hover {
+          background-color: #e0e0e0;
+        }
+
+        &.selected {
+          background-color: #008080;
+          color: white;
+          border-color: #008080;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  button {
+    background-color: #008080;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: #006666;
+      transform: scale(1.02);
+    }
+
+    &:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+  }
+}
+
+/* Styles for carousel navigation buttons */
+.product-carousel > button {
+  background-color: #008080;
+  color: white;
+  border: none;
+  padding: 50px 50px;
+  border-radius: 50%; /* Runde Buttons */
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0; /* Verhindert, dass die Buttons schrumpfen */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: #006666;
+    transform: scale(1.1);
+  }
+}
+.product-card {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}

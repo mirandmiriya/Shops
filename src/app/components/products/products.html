@@ -1,0 +1,14 @@
+<div class="product-carousel">
+  <button (click)="previousProduct()">السابق</button>
+  <div class="product-display">
+    <div class="product-card">
+      <img [src]="currentImage()" [alt]="products()[currentIndex()].name" />
+      <h3>{{ products()[currentIndex()].name }}</h3>
+      <p>{{ products()[currentIndex()].price | currency:'EUR' }}</p>
+      <p *ngIf="!products()[currentIndex()].inStock" style="color: red;">غير متوفر حالياً</p>
+      <button [disabled]="!products()[currentIndex()].inStock" (click)="addToCart(products()[currentIndex()])">
+        بنفسك صمم رسمتك عالكنزتك</button>
+    </div>
+  </div>
+  <button (click)="nextProduct()">التالي</button>
+</div>

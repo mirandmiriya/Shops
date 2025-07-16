@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Home} from "./home/home";
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { Home } from "./components/home/home";
+import { Products } from "./components/products/products";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Home],
+  standalone: true,
+  imports: [RouterOutlet,RouterLink],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss'],
 })
 export class App {
-  protected title = 'miro-shop';
+  title = 'miro-shop';
 }
